@@ -40,6 +40,7 @@ export default function App() {
   const isMatch = useMemo(() => skillMatcher(query), [query])
   const results = useMemo(() => candidates.filter((c) => matchesQuery(c, query)), [query])
   const top = useMemo(() => [...results].sort((a, b) => b.aiMatch - a.aiMatch).slice(0, 4), [results])
+  const rest = useMemo(() => results.filter((c) => !top.includes(c)), [results, top])
 
   const current = byId(openId)
   const navList = current && results.includes(current) ? results : candidates
@@ -144,31 +145,33 @@ export default function App() {
           onOpen={open}
         />
 
-        <section aria-labelledby="all-heading" className="mt-8">
-          <h2 id="all-heading" className="mb-3 text-lg font-semibold">
-            All results
-          </h2>
-          {results.length ? (
-            <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {results.map((c) => (
-                <CandidateCard
-                  key={c.id}
-                  c={c}
-                  isMatch={isMatch}
-                  saved={saved.has(c.id)}
-                  onToggleSave={() => toggleSave(c.id)}
-                  onOpen={(el) => open(c, el)}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="grid place-items-center rounded-2xl border border-dashed border-line bg-surface px-6 py-16 text-center">
-              <SearchX className="size-8 text-muted" />
-              <p className="mt-3 font-semibold">No candidates for “{query.trim()}”</p>
-              <p className="mt-1 text-sm text-muted">Try a role like “UX Designer” or a skill like “Figma”.</p>
-            </div>
-          )}
-        </section>
+        {(rest.length > 0 || !results.length) && (
+          <section aria-labelledby="all-heading" className="mt-8">
+            <h2 id="all-heading" className="mb-3 text-lg font-semibold">
+              All results
+            </h2>
+            {results.length ? (
+              <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {rest.map((c) => (
+                  <CandidateCard
+                    key={c.id}
+                    c={c}
+                    isMatch={isMatch}
+                    saved={saved.has(c.id)}
+                    onToggleSave={() => toggleSave(c.id)}
+                    onOpen={(el) => open(c, el)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="grid place-items-center rounded-2xl border border-dashed border-line bg-surface px-6 py-16 text-center">
+                <SearchX className="size-8 text-muted" />
+                <p className="mt-3 font-semibold">No candidates for “{query.trim()}”</p>
+                <p className="mt-1 text-sm text-muted">Try a role like “UX Designer” or a skill like “Figma”.</p>
+              </div>
+            )}
+          </section>
+        )}
       </main>
 
       <AnimatePresence>
