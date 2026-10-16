@@ -27,8 +27,8 @@ export interface Candidate {
   skills: { design: string[]; tools: string[] }
   transcript: string[]
   portfolio: PortfolioItem[]
-  github: { user: string; repos: number; languages: string[] } | null
-  links: { behance?: string; dribbble?: string; linkedin?: string }
+  /** imported via GitHub OAuth; shown as verified activity, never as a handle or link */
+  github: { repos: number; languages: string[] } | null
   /** seconds, from the generated media manifest */
   duration: number
   /** captions exist for this candidate */

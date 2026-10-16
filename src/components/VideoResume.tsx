@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Captions, CaptionsOff, Pause, Play, Volume2, VolumeX } from 'lucide-react'
 import type { Candidate } from '../types'
-import { audioSrc } from '../data'
+import { audioSrc, photo } from '../data'
 import { audible, useAudible } from '../lib/audible'
 import { formatTime } from '../lib/format'
 import { cueAt, useCues } from '../lib/vtt'
@@ -11,7 +11,7 @@ const SPEEDS = [1, 1.5] as const
 /**
  * Portrait video resume with custom controls (finding 03).
  * The "video" is the candidate's portrait with simulated playback over a real
- * spoken soundtrack; captions and the transcript come from the same .vtt cues.
+ * spoken soundtrack; captions come from the candidate's .vtt cues.
  */
 export function VideoResume({ c }: { c: Candidate }) {
   const key = `modal:${c.id}`
@@ -69,7 +69,7 @@ export function VideoResume({ c }: { c: Candidate }) {
   return (
     <div>
       <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-2xl bg-[#DCE3EC]">
-        <img src={c.photo} alt={`${c.name}'s video resume`} data-playing={playing} className="kenburns size-full object-cover" />
+        <img src={photo(c, 420, 525)} alt={`${c.name}'s video resume`} data-playing={playing} className="kenburns size-full object-cover" />
         <button
           type="button"
           onClick={toggle}
@@ -146,33 +146,6 @@ export function VideoResume({ c }: { c: Candidate }) {
         />
       </div>
 
-      {/* Transcript: same cues as the captions; click a line to seek */}
-      <div className="mx-auto mt-5 max-w-[420px]">
-        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted">Transcript</h3>
-        {cues.length ? (
-          <ol className="space-y-0.5">
-            {cues.map((q, i) => (
-              <li key={i}>
-                <button
-                  type="button"
-                  onClick={() => seek(q.start + 0.01, true)}
-                  aria-current={i === idx ? 'true' : undefined}
-                  className={`flex w-full gap-3 rounded-lg px-3 py-2 text-left text-[14px] leading-snug transition-colors ${
-                    i === idx ? 'bg-brand-50 text-ink' : 'text-[#3B4456] hover:bg-[#F1F3F7]'
-                  }`}
-                >
-                  <span className={`w-9 shrink-0 pt-px text-xs font-medium tabular-nums ${i === idx ? 'text-brand' : 'text-muted'}`}>
-                    {formatTime(q.start)}
-                  </span>
-                  <span className={i === idx ? 'font-medium' : ''}>{q.text}</span>
-                </button>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <p className="text-sm text-muted">Loading transcript…</p>
-        )}
-      </div>
     </div>
   )
 }

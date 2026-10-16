@@ -39,7 +39,7 @@ export default function App() {
 
   const isMatch = useMemo(() => skillMatcher(query), [query])
   const results = useMemo(() => candidates.filter((c) => matchesQuery(c, query)), [query])
-  const top = useMemo(() => results.filter((c) => c.top).sort((a, b) => b.aiMatch - a.aiMatch), [results])
+  const top = useMemo(() => [...results].sort((a, b) => b.aiMatch - a.aiMatch).slice(0, 4), [results])
 
   const current = byId(openId)
   const navList = current && results.includes(current) ? results : candidates

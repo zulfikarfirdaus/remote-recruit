@@ -2,11 +2,9 @@ import { Search } from 'lucide-react'
 
 export function Logo() {
   return (
-    <a href="/" className="flex items-center gap-2 shrink-0" aria-label="RemoteRecruit home">
-      <span className="grid size-8 place-items-center rounded-lg bg-brand text-[13px] font-bold text-white">RR</span>
-      <span className="hidden text-[17px] font-semibold tracking-tight text-white sm:block">
-        Remote<span className="text-[#5FB0FF]">Recruit</span>
-      </span>
+    <a href="/" className="flex shrink-0 items-center gap-2.5" aria-label="RemoteRecruit home">
+      <img src="/rr-mark.png" alt="" className="h-7 w-auto" />
+      <img src="/rr-wordmark-white.png" alt="" className="hidden h-[18px] w-auto sm:block" />
     </a>
   )
 }

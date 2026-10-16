@@ -1,11 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Bookmark, BookmarkCheck, ChevronLeft, ChevronRight, Clock, MapPin, MessageSquare, Share2, X } from 'lucide-react'
+import { Bookmark, BookmarkCheck, BriefcaseBusiness, ChevronLeft, ChevronRight, Clock, Globe, MapPin, MessageSquare, Share2, Sparkles, Wallet, X, type LucideIcon } from 'lucide-react'
 import type { Candidate } from '../types'
+import { photo } from '../data'
 import { formatRate, rankedSkills } from '../lib/format'
 import { AvailabilityChip, SkillChip } from './ui'
 import { VideoResume } from './VideoResume'
-import { AiInfo, DetailsGrid, Links, Portfolio, Section, SkillGroups } from './ProfileSections'
+import { AiInfo, CodeActivity, DetailsGrid, Portfolio, Section, SkillGroups } from './ProfileSections'
 
 interface Props {
   c: Candidate
@@ -166,7 +167,7 @@ export function ProfileModal(p: Props) {
               <div data-header={c.id} className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,600px)] lg:gap-10">
                 <div className="min-w-0">
                   <div className="flex items-start gap-4">
-                    <img src={c.photo} alt="" className="size-16 shrink-0 rounded-full object-cover ring-1 ring-line" />
+                    <img src={photo(c, 64)} alt="" className="size-16 shrink-0 rounded-full object-cover ring-1 ring-line" />
                     <div className="min-w-0">
                       <h2 id="profile-name" className="flex items-center gap-2 text-xl font-semibold tracking-tight">
                         <span className="truncate">{c.name}</span>
@@ -200,16 +201,16 @@ export function ProfileModal(p: Props) {
 
                 <div className="min-w-0">
                   <dl className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-                    <Tile label="Hourly rate" empty={c.rate == null}>
+                    <Tile icon={Wallet} label="Hourly rate" empty={c.rate == null}>
                       {c.rate == null ? 'Rate on request' : <>${c.rate}<span className="text-sm font-medium text-muted">/hr</span></>}
                     </Tile>
-                    <Tile label="Experience">
+                    <Tile icon={BriefcaseBusiness} label="Experience">
                       {c.years}<span className="text-sm font-medium text-muted"> yrs</span>
                     </Tile>
-                    <Tile label="AI match" info={<AiInfo />}>
+                    <Tile icon={Sparkles} label="AI match" info={<AiInfo />}>
                       <span className="text-brand">{c.aiMatch}%</span>
                     </Tile>
-                    <Tile label="Languages" small>
+                    <Tile icon={Globe} label="Languages" small>
                       {c.languages.slice(0, 2).join(', ')}
                       {c.languages.length > 2 && <span className="text-muted"> +{c.languages.length - 2}</span>}
                     </Tile>
@@ -261,10 +262,10 @@ export function ProfileModal(p: Props) {
               {/* 4. Below, no tabs */}
               <div className="mt-10 space-y-10">
                 <Portfolio c={c} />
-                <Links c={c} />
+                <CodeActivity c={c} />
               </div>
-              {!c.portfolio.length && !c.github && !Object.keys(c.links).length && (
-                <Section title="Portfolio & links">
+              {!c.portfolio.length && !c.github && (
+                <Section title="Portfolio">
                   <p className="text-sm text-muted">Not provided</p>
                 </Section>
               )}
@@ -283,7 +284,7 @@ export function ProfileModal(p: Props) {
               className="absolute inset-x-0 bottom-0 z-10 border-t border-line bg-surface/95 px-4 py-3 backdrop-blur sm:px-8"
             >
               <div className="flex items-center gap-3">
-                <img src={c.photo} alt="" className="size-9 rounded-full object-cover" />
+                <img src={photo(c, 36)} alt="" className="size-9 rounded-full object-cover" />
                 <p className="min-w-0 flex-1 truncate text-sm">
                   <span className="font-semibold">{c.name}</span>
                   <span className="text-muted"> · </span>
@@ -307,9 +308,12 @@ export function ProfileModal(p: Props) {
   )
 }
 
-function Tile({ label, children, info, empty, small }: { label: string; children: ReactNode; info?: ReactNode; empty?: boolean; small?: boolean }) {
+function Tile({ icon: Icon, label, children, info, empty, small }: { icon: LucideIcon; label: string; children: ReactNode; info?: ReactNode; empty?: boolean; small?: boolean }) {
   return (
-    <div className="rounded-xl border border-line bg-bg/60 px-3.5 py-3">
+    <div className="flex flex-col rounded-xl border border-line bg-bg/60 p-3.5">
+      <span className="mb-3 grid size-9 place-items-center rounded-lg bg-surface text-brand ring-1 ring-line" aria-hidden>
+        <Icon className="size-[18px]" />
+      </span>
       <dt className="flex items-center gap-1 text-xs font-medium text-muted">
         {label}
         {info}

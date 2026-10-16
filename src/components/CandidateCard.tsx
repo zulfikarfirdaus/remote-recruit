@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Bookmark, BookmarkCheck, Volume2, VolumeX } from 'lucide-react'
 import type { Candidate } from '../types'
-import { audioSrc } from '../data'
+import { audioSrc, photo } from '../data'
 import { audible, useAudible } from '../lib/audible'
 import { formatTime, rankedSkills } from '../lib/format'
 import { loadCues, cueAt, type Cue } from '../lib/vtt'
@@ -84,13 +84,13 @@ export function CandidateCard({ c, isMatch, saved, onToggleSave, onOpen, variant
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
       className={`group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-shadow hover:shadow-[0_8px_28px_-12px_rgba(15,23,42,.25)] focus-within:shadow-[0_8px_28px_-12px_rgba(15,23,42,.25)] ${
-        variant === 'carousel' ? 'w-[248px] shrink-0 snap-start sm:w-[264px]' : ''
+        variant === 'carousel' ? 'w-[248px] shrink-0 snap-start border-transparent sm:w-auto' : ''
       }`}
     >
       {/* Media: 4:5 portrait "video" */}
       <div className="relative aspect-[4/5] overflow-hidden bg-[#DCE3EC]">
         <img
-          src={c.photo}
+          src={photo(c, 320, 400)}
           alt=""
           loading="lazy"
           data-playing={playing}

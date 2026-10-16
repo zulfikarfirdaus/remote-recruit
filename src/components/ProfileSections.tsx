@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
-import { ArrowUpRight, FolderGit2, Info } from 'lucide-react'
-import type { Candidate } from '../types'
+import { Info, Maximize2, ShieldCheck, X } from 'lucide-react'
+import type { Candidate, PortfolioItem } from '../types'
 import { availabilityMeta, formatAnnual, formatRate, seeded } from '../lib/format'
 import { SkillChip } from './ui'
 
@@ -126,17 +126,17 @@ export function SkillGroups({ c, isMatch }: { c: Candidate; isMatch: (s: string)
 }
 
 export function Portfolio({ c }: { c: Candidate }) {
+  const [open, setOpen] = useState<PortfolioItem | null>(null)
   if (!c.portfolio.length) return null
   return (
     <Section title="Portfolio" aside={<span className="text-[13px] text-muted">{c.portfolio.length} projects</span>}>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {c.portfolio.map((p) => (
           <li key={p.title}>
-            <a
-              href={`https://dribbble.com/search/${encodeURIComponent(p.title)}`}
-              target="_blank"
-              rel="noreferrer"
-              className="group block overflow-hidden rounded-xl border border-line bg-surface transition-shadow hover:shadow-[0_8px_24px_-12px_rgba(15,23,42,.25)]"
+            <button
+              type="button"
+              onClick={() => setOpen(p)}
+              className="group block w-full overflow-hidden rounded-xl border border-line bg-surface text-left transition-shadow hover:shadow-[0_8px_24px_-12px_rgba(15,23,42,.25)]"
             >
               <PortfolioThumb seed={p.seed} />
               <div className="flex items-start justify-between gap-3 p-3.5">
@@ -144,13 +144,63 @@ export function Portfolio({ c }: { c: Candidate }) {
                   <h3 className="truncate text-[14px] font-semibold">{p.title}</h3>
                   <p className="mt-0.5 text-[13px] text-muted">{p.outcome}</p>
                 </div>
-                <ArrowUpRight className="mt-0.5 size-4 shrink-0 text-muted group-hover:text-brand" aria-label="Opens in a new tab" />
+                <Maximize2 className="mt-0.5 size-4 shrink-0 text-muted group-hover:text-brand" aria-hidden />
               </div>
-            </a>
+            </button>
           </li>
         ))}
       </ul>
+      {open && <ProjectViewer c={c} p={open} onClose={() => setOpen(null)} />}
     </Section>
+  )
+}
+
+/** Case studies open inside RemoteRecruit, so the conversation stays on the platform */
+function ProjectViewer({ c, p, onClose }: { c: Candidate; p: PortfolioItem; onClose: () => void }) {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const prev = document.activeElement as HTMLElement | null
+    ref.current?.focus()
+    return () => prev?.focus()
+  }, [])
+  return (
+    <div
+      className="fixed inset-0 z-[70] grid place-items-center p-4"
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') {
+          e.stopPropagation()
+          onClose()
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') e.stopPropagation()
+      }}
+    >
+      <div className="absolute inset-0 bg-navy/70" onClick={onClose} aria-hidden />
+      <div
+        ref={ref}
+        role="dialog"
+        aria-modal="true"
+        aria-label={p.title}
+        tabIndex={-1}
+        className="relative w-full max-w-3xl overflow-hidden rounded-2xl bg-surface shadow-2xl outline-none"
+      >
+        <PortfolioThumb seed={p.seed} />
+        <div className="flex items-start justify-between gap-4 p-5">
+          <div>
+            <p className="text-xs font-medium text-muted">{c.name} · Case study</p>
+            <h3 className="mt-1 text-lg font-semibold">{p.title}</h3>
+            <p className="mt-1 text-[15px] text-[#3B4456]">{p.outcome}</p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close project"
+            className="grid size-9 shrink-0 place-items-center rounded-lg hover:bg-[#F1F3F7]"
+          >
+            <X className="size-5" />
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -198,86 +248,58 @@ function PortfolioThumb({ seed }: { seed: string }) {
   )
 }
 
-const LINK_META = {
-  behance: { label: 'Behance', mark: 'Bē', bg: 'bg-[#1769FF]', url: (h: string) => `https://www.behance.net/${h}` },
-  dribbble: { label: 'Dribbble', mark: 'Dr', bg: 'bg-[#EA4C89]', url: (h: string) => `https://dribbble.com/${h}` },
-  linkedin: { label: 'LinkedIn', mark: 'in', bg: 'bg-[#0A66C2]', url: (h: string) => `https://www.linkedin.com/in/${h}` },
-} as const
-
-export function Links({ c }: { c: Candidate }) {
-  const links = (Object.keys(LINK_META) as (keyof typeof LINK_META)[]).filter((k) => c.links[k])
-  if (!c.github && !links.length) return null
-  return (
-    <Section title={c.github ? 'GitHub & links' : 'Links'}>
-      <div className={`grid gap-4 ${c.github && links.length ? 'lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]' : ''}`}>
-        {c.github && <GitHubCard c={c} gh={c.github} />}
-        {links.length > 0 && (
-          <ul className="grid content-start gap-2">
-            {links.map((k) => {
-              const m = LINK_META[k]
-              const handle = c.links[k]!
-              return (
-                <li key={k}>
-                  <a
-                    href={m.url(handle)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center gap-3 rounded-xl border border-line px-3.5 py-3 hover:border-[#C9D1DE]"
-                  >
-                    <span className={`grid size-8 place-items-center rounded-lg text-[12px] font-bold text-white ${m.bg}`}>{m.mark}</span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block text-[14px] font-medium">{m.label}</span>
-                      <span className="block truncate text-xs text-muted">/{handle}</span>
-                    </span>
-                    <ArrowUpRight className="size-4 text-muted group-hover:text-brand" />
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </div>
-    </Section>
-  )
-}
-
-function GitHubCard({ c, gh }: { c: Candidate; gh: NonNullable<Candidate['github']> }) {
+/**
+ * Developer work without contact leakage: GitHub is connected once (OAuth) and RR shows
+ * verified activity, never the handle or a link out.
+ */
+export function CodeActivity({ c }: { c: Candidate }) {
+  const gh = c.github
+  if (!gh) return null
   const rnd = seeded(c.id)
   const weeks = Array.from({ length: 52 }, () => {
     const r = rnd()
     return r < 0.18 ? 0 : r < 0.45 ? 1 : r < 0.75 ? 2 : r < 0.92 ? 3 : 4
   })
+  const active = weeks.filter(Boolean).length
   const shades = ['bg-[#EDF0F5]', 'bg-[#BFDCF6]', 'bg-[#7DB7EC]', 'bg-[#3A8FDB]', 'bg-brand']
   return (
-    <a
-      href={`https://github.com/${gh.user}`}
-      target="_blank"
-      rel="noreferrer"
-      className="group block rounded-xl border border-line p-4 hover:border-[#C9D1DE]"
-    >
-      <div className="flex items-center gap-3">
-        <span className="grid size-8 place-items-center rounded-lg bg-ink text-white">
-          <FolderGit2 className="size-4" />
+    <Section
+      title="Code activity"
+      aside={
+        <span className="inline-flex items-center gap-1 rounded-full bg-success-50 px-2.5 py-1 text-xs font-semibold text-[#067647]">
+          <ShieldCheck className="size-3.5" /> Verified via GitHub
         </span>
-        <div className="min-w-0 flex-1">
-          <p className="text-[14px] font-medium">github.com/{gh.user}</p>
-          <p className="text-xs text-muted">{gh.repos} public repositories</p>
+      }
+    >
+      <div className="grid gap-4 rounded-xl border border-line p-4 sm:grid-cols-[auto_auto_minmax(0,1fr)] sm:items-center sm:gap-8">
+        <div>
+          <p className="text-xs text-muted">Public repositories</p>
+          <p className="mt-0.5 text-[22px] font-bold tracking-tight">{gh.repos}</p>
         </div>
-        <ArrowUpRight className="size-4 text-muted group-hover:text-brand" />
-      </div>
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {gh.languages.map((l) => (
-          <SkillChip key={l}>{l}</SkillChip>
-        ))}
-      </div>
-      <div className="mt-4">
-        <p className="mb-1.5 text-xs text-muted">Contributions, last 12 months</p>
-        <div className="grid grid-cols-[repeat(26,minmax(0,1fr))] gap-[3px] sm:grid-cols-[repeat(52,minmax(0,1fr))]" aria-hidden>
-          {weeks.map((w, i) => (
-            <span key={i} className={`aspect-square rounded-[2px] ${shades[w]} ${i < 26 ? 'max-sm:hidden' : ''}`} />
-          ))}
+        <div>
+          <p className="text-xs text-muted">Active weeks</p>
+          <p className="mt-0.5 text-[22px] font-bold tracking-tight">
+            {active}
+            <span className="text-sm font-medium text-muted">/52</span>
+          </p>
+        </div>
+        <div>
+          <p className="mb-1.5 text-xs text-muted">Top languages</p>
+          <div className="flex flex-wrap gap-1.5">
+            {gh.languages.map((l) => (
+              <SkillChip key={l}>{l}</SkillChip>
+            ))}
+          </div>
+        </div>
+        <div className="sm:col-span-3">
+          <p className="mb-1.5 text-xs text-muted">Contributions, last 12 months</p>
+          <div className="grid grid-cols-[repeat(26,minmax(0,1fr))] gap-[3px] sm:grid-cols-[repeat(52,minmax(0,1fr))]" aria-hidden>
+            {weeks.map((w, i) => (
+              <span key={i} className={`aspect-square rounded-[2px] ${shades[w]} ${i < 26 ? 'max-sm:hidden' : ''}`} />
+            ))}
+          </div>
         </div>
       </div>
-    </a>
+    </Section>
   )
 }

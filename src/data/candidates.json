@@ -12,14 +12,28 @@
     "annualRate": 140000,
     "aiMatch": 94,
     "availability": "now",
-    "languages": ["English", "Yoruba"],
-    "photo": "https://randomuser.me/api/portraits/women/36.jpg",
+    "languages": [
+      "English",
+      "Yoruba"
+    ],
+    "photo": "https://images.unsplash.com/photo-1561406636-b80293969660",
     "voice": "Tessa",
     "top": true,
     "bio": "Product designer focused on fintech and marketplaces. I lead discovery through to shipped UI, and I like turning messy onboarding flows into something people finish.",
     "skills": {
-      "design": ["UX Design", "Product Strategy", "Design Systems", "User Research", "Prototyping"],
-      "tools": ["Figma", "FigJam", "Maze", "Notion"]
+      "design": [
+        "UX Design",
+        "Product Strategy",
+        "Design Systems",
+        "User Research",
+        "Prototyping"
+      ],
+      "tools": [
+        "Figma",
+        "FigJam",
+        "Maze",
+        "Notion"
+      ]
     },
     "transcript": [
       "Hi, I'm Amara, a senior product designer based in Lagos.",
@@ -29,12 +43,30 @@
       "I'm available now, and I overlap well with European and US East Coast hours."
     ],
     "portfolio": [
-      { "title": "Kora wallet onboarding", "outcome": "Completion up 31% in six weeks", "seed": "kora" },
-      { "title": "Merchant dashboard", "outcome": "Support tickets down 22%", "seed": "merchant" },
-      { "title": "Lend design system", "outcome": "120 components across 4 squads", "seed": "lend" }
+      {
+        "title": "Kora wallet onboarding",
+        "outcome": "Completion up 31% in six weeks",
+        "seed": "kora"
+      },
+      {
+        "title": "Merchant dashboard",
+        "outcome": "Support tickets down 22%",
+        "seed": "merchant"
+      },
+      {
+        "title": "Lend design system",
+        "outcome": "120 components across 4 squads",
+        "seed": "lend"
+      }
     ],
-    "github": { "user": "amaraok", "repos": 18, "languages": ["TypeScript", "CSS", "Swift"] },
-    "links": { "behance": "amaraokafor", "dribbble": "amaraok", "linkedin": "amara-okafor" }
+    "github": {
+      "repos": 18,
+      "languages": [
+        "TypeScript",
+        "CSS",
+        "Swift"
+      ]
+    }
   },
   {
     "id": "lucas-ferreira",
@@ -49,14 +81,28 @@
     "annualRate": 90000,
     "aiMatch": 89,
     "availability": "now",
-    "languages": ["Portuguese", "English", "Spanish"],
-    "photo": "https://randomuser.me/api/portraits/men/32.jpg",
+    "languages": [
+      "Portuguese",
+      "English",
+      "Spanish"
+    ],
+    "photo": "https://images.unsplash.com/photo-1695927621677-ec96e048dce2",
     "voice": "Reed (English (US))",
     "top": true,
     "bio": "UX designer who sits between research and interface. I've shipped e-commerce checkout and logistics tools used across Latin America.",
     "skills": {
-      "design": ["UX Design", "Interaction Design", "Usability Testing", "Information Architecture"],
-      "tools": ["Figma", "Framer", "Hotjar", "Miro"]
+      "design": [
+        "UX Design",
+        "Interaction Design",
+        "Usability Testing",
+        "Information Architecture"
+      ],
+      "tools": [
+        "Figma",
+        "Framer",
+        "Hotjar",
+        "Miro"
+      ]
     },
     "transcript": [
       "Hello, I'm Lucas, a UX designer in São Paulo.",
@@ -66,12 +112,23 @@
       "I can start right away."
     ],
     "portfolio": [
-      { "title": "One-page checkout", "outcome": "Drop-off down 18%", "seed": "checkout" },
-      { "title": "Courier route app", "outcome": "Deliveries per shift up 12%", "seed": "courier" },
-      { "title": "Returns flow", "outcome": "Return requests resolved 2× faster", "seed": "returns" }
+      {
+        "title": "One-page checkout",
+        "outcome": "Drop-off down 18%",
+        "seed": "checkout"
+      },
+      {
+        "title": "Courier route app",
+        "outcome": "Deliveries per shift up 12%",
+        "seed": "courier"
+      },
+      {
+        "title": "Returns flow",
+        "outcome": "Return requests resolved 2× faster",
+        "seed": "returns"
+      }
     ],
-    "github": null,
-    "links": { "dribbble": "lucasferreira", "linkedin": "lucas-ferreira-ux" }
+    "github": null
   },
   {
     "id": "priya-raman",
@@ -86,14 +143,27 @@
     "annualRate": null,
     "aiMatch": 86,
     "availability": "two-weeks",
-    "languages": ["English", "Tamil", "Hindi"],
-    "photo": "https://randomuser.me/api/portraits/women/8.jpg",
+    "languages": [
+      "English",
+      "Tamil",
+      "Hindi"
+    ],
+    "photo": "https://images.unsplash.com/photo-1609371497456-3a55a205d5eb",
     "voice": "Rishi",
     "top": true,
     "bio": "I design B2B SaaS for health and logistics teams. My work is mostly complex tables, permissions and the moments where data turns into a decision.",
     "skills": {
-      "design": ["UX Design", "Accessibility", "Data Visualization", "User Research"],
-      "tools": ["Figma", "Dovetail", "Storybook"]
+      "design": [
+        "UX Design",
+        "Accessibility",
+        "Data Visualization",
+        "User Research"
+      ],
+      "tools": [
+        "Figma",
+        "Dovetail",
+        "Storybook"
+      ]
     },
     "transcript": [
       "Hi, I'm Priya, a UX designer working from Bengaluru.",
@@ -103,12 +173,29 @@
       "I can start in about two weeks."
     ],
     "portfolio": [
-      { "title": "Clinic scheduling", "outcome": "No-shows down 14%", "seed": "clinic" },
-      { "title": "Fleet dashboard", "outcome": "WCAG 2.2 AA compliant", "seed": "fleet" },
-      { "title": "Roles & permissions", "outcome": "Setup time from 2 days to 3 hours", "seed": "roles" }
+      {
+        "title": "Clinic scheduling",
+        "outcome": "No-shows down 14%",
+        "seed": "clinic"
+      },
+      {
+        "title": "Fleet dashboard",
+        "outcome": "WCAG 2.2 AA compliant",
+        "seed": "fleet"
+      },
+      {
+        "title": "Roles & permissions",
+        "outcome": "Setup time from 2 days to 3 hours",
+        "seed": "roles"
+      }
     ],
-    "github": { "user": "priyaraman", "repos": 11, "languages": ["JavaScript", "Python"] },
-    "links": { "linkedin": "priya-raman" }
+    "github": {
+      "repos": 11,
+      "languages": [
+        "JavaScript",
+        "Python"
+      ]
+    }
   },
   {
     "id": "oliver-hughes",
@@ -123,14 +210,26 @@
     "annualRate": 210000,
     "aiMatch": 82,
     "availability": "part-time",
-    "languages": ["English", "French"],
-    "photo": "https://randomuser.me/api/portraits/men/75.jpg",
+    "languages": [
+      "English",
+      "French"
+    ],
+    "photo": "https://images.unsplash.com/photo-1764084052338-23a317e34ea1",
     "voice": "Daniel",
     "top": true,
     "bio": "Design lead with twelve years across media and public services. I build teams, set up research ops and coach designers into leads.",
     "skills": {
-      "design": ["UX Design", "Design Leadership", "Service Design", "Workshop Facilitation"],
-      "tools": ["Figma", "Miro", "Jira"]
+      "design": [
+        "UX Design",
+        "Design Leadership",
+        "Service Design",
+        "Workshop Facilitation"
+      ],
+      "tools": [
+        "Figma",
+        "Miro",
+        "Jira"
+      ]
     },
     "transcript": [
       "Hello, I'm Oliver, a lead UX designer in Manchester.",
@@ -139,12 +238,29 @@
       "Right now I'm open to part-time leadership or advisory work."
     ],
     "portfolio": [
-      { "title": "Public services account", "outcome": "Used by 3M citizens", "seed": "gov" },
-      { "title": "Newsroom CMS", "outcome": "Publish time halved", "seed": "news" },
-      { "title": "ResearchOps playbook", "outcome": "40 studies a year", "seed": "ops" }
+      {
+        "title": "Public services account",
+        "outcome": "Used by 3M citizens",
+        "seed": "gov"
+      },
+      {
+        "title": "Newsroom CMS",
+        "outcome": "Publish time halved",
+        "seed": "news"
+      },
+      {
+        "title": "ResearchOps playbook",
+        "outcome": "40 studies a year",
+        "seed": "ops"
+      }
     ],
-    "github": { "user": "ohughes", "repos": 6, "languages": ["HTML", "CSS"] },
-    "links": { "linkedin": "oliver-hughes-design" }
+    "github": {
+      "repos": 6,
+      "languages": [
+        "HTML",
+        "CSS"
+      ]
+    }
   },
   {
     "id": "sofia-martinez",
@@ -159,14 +275,27 @@
     "annualRate": 80000,
     "aiMatch": 80,
     "availability": "now",
-    "languages": ["Spanish", "English"],
-    "photo": "https://randomuser.me/api/portraits/women/47.jpg",
+    "languages": [
+      "Spanish",
+      "English"
+    ],
+    "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
     "voice": "Samantha",
     "top": true,
     "bio": "Product designer for consumer mobile apps. I care about motion, small details and getting real users in front of prototypes early.",
     "skills": {
-      "design": ["Product Design", "Mobile UI", "Motion Design", "Prototyping"],
-      "tools": ["Figma", "Rive", "ProtoPie", "Lottie"]
+      "design": [
+        "Product Design",
+        "Mobile UI",
+        "Motion Design",
+        "Prototyping"
+      ],
+      "tools": [
+        "Figma",
+        "Rive",
+        "ProtoPie",
+        "Lottie"
+      ]
     },
     "transcript": [
       "Hi, I'm Sofía, a product designer in Guadalajara.",
@@ -176,12 +305,29 @@
       "I'm available now, and I share working hours with the US."
     ],
     "portfolio": [
-      { "title": "Trip planner app", "outcome": "4.8★ on the App Store", "seed": "trip" },
-      { "title": "Habit tracker", "outcome": "Day-30 retention up 9%", "seed": "habit" },
-      { "title": "Motion guidelines", "outcome": "Adopted by 3 product teams", "seed": "motion" }
+      {
+        "title": "Trip planner app",
+        "outcome": "4.8★ on the App Store",
+        "seed": "trip"
+      },
+      {
+        "title": "Habit tracker",
+        "outcome": "Day-30 retention up 9%",
+        "seed": "habit"
+      },
+      {
+        "title": "Motion guidelines",
+        "outcome": "Adopted by 3 product teams",
+        "seed": "motion"
+      }
     ],
-    "github": { "user": "sofimtz", "repos": 9, "languages": ["Swift", "Kotlin"] },
-    "links": { "behance": "sofiamartinez", "dribbble": "sofimtz", "linkedin": "sofia-martinez-design" }
+    "github": {
+      "repos": 9,
+      "languages": [
+        "Swift",
+        "Kotlin"
+      ]
+    }
   },
   {
     "id": "jack-thompson",
@@ -196,14 +342,26 @@
     "annualRate": null,
     "aiMatch": 78,
     "availability": "two-weeks",
-    "languages": ["English"],
-    "photo": "https://randomuser.me/api/portraits/men/22.jpg",
+    "languages": [
+      "English"
+    ],
+    "photo": "https://images.unsplash.com/photo-1633367583895-08545d733dfe",
     "voice": "Karen",
     "top": false,
     "bio": "Mixed-methods researcher who also designs. I'm happiest running a diary study on Monday and a prototype test on Friday.",
     "skills": {
-      "design": ["User Research", "UX Design", "Journey Mapping", "Survey Design"],
-      "tools": ["Figma", "Dovetail", "Lookback", "Qualtrics"]
+      "design": [
+        "User Research",
+        "UX Design",
+        "Journey Mapping",
+        "Survey Design"
+      ],
+      "tools": [
+        "Figma",
+        "Dovetail",
+        "Lookback",
+        "Qualtrics"
+      ]
     },
     "transcript": [
       "G'day, I'm Jack, a UX researcher and designer in Melbourne.",
@@ -212,11 +370,18 @@
       "I'll be available in about two weeks."
     ],
     "portfolio": [
-      { "title": "Claims journey map", "outcome": "Claim time down 5 days", "seed": "claims" },
-      { "title": "Energy plan finder", "outcome": "Switch rate up 16%", "seed": "energy" }
+      {
+        "title": "Claims journey map",
+        "outcome": "Claim time down 5 days",
+        "seed": "claims"
+      },
+      {
+        "title": "Energy plan finder",
+        "outcome": "Switch rate up 16%",
+        "seed": "energy"
+      }
     ],
-    "github": null,
-    "links": { "linkedin": "jack-thompson-ux" }
+    "github": null
   },
   {
     "id": "aoife-byrne",
@@ -231,14 +396,26 @@
     "annualRate": 170000,
     "aiMatch": 77,
     "availability": "now",
-    "languages": ["English", "Irish"],
-    "photo": "https://randomuser.me/api/portraits/women/12.jpg",
+    "languages": [
+      "English",
+      "Irish"
+    ],
+    "photo": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb",
     "voice": "Moira",
     "top": false,
     "bio": "Senior UX designer for developer tools and APIs. I write a lot, and I treat docs, error messages and empty states as product surface.",
     "skills": {
-      "design": ["UX Design", "Content Design", "Developer Experience", "Design Systems"],
-      "tools": ["Figma", "Storybook", "Linear"]
+      "design": [
+        "UX Design",
+        "Content Design",
+        "Developer Experience",
+        "Design Systems"
+      ],
+      "tools": [
+        "Figma",
+        "Storybook",
+        "Linear"
+      ]
     },
     "transcript": [
       "Hi there, I'm Aoife, a senior UX designer in Dublin.",
@@ -247,12 +424,30 @@
       "I'm free to start now."
     ],
     "portfolio": [
-      { "title": "API console", "outcome": "Time to first call down 40%", "seed": "api" },
-      { "title": "Error message system", "outcome": "Docs traffic from errors up 3×", "seed": "errors" },
-      { "title": "CLI onboarding", "outcome": "Activation up 12%", "seed": "cli" }
+      {
+        "title": "API console",
+        "outcome": "Time to first call down 40%",
+        "seed": "api"
+      },
+      {
+        "title": "Error message system",
+        "outcome": "Docs traffic from errors up 3×",
+        "seed": "errors"
+      },
+      {
+        "title": "CLI onboarding",
+        "outcome": "Activation up 12%",
+        "seed": "cli"
+      }
     ],
-    "github": { "user": "aoifeb", "repos": 34, "languages": ["TypeScript", "Go", "MDX"] },
-    "links": { "linkedin": "aoife-byrne", "dribbble": "aoifeb" }
+    "github": {
+      "repos": 34,
+      "languages": [
+        "TypeScript",
+        "Go",
+        "MDX"
+      ]
+    }
   },
   {
     "id": "dimas-pratama",
@@ -267,14 +462,26 @@
     "annualRate": 55000,
     "aiMatch": 74,
     "availability": "now",
-    "languages": ["Indonesian", "English"],
-    "photo": "https://randomuser.me/api/portraits/men/86.jpg",
+    "languages": [
+      "Indonesian",
+      "English"
+    ],
+    "photo": "https://images.unsplash.com/photo-1546567850-8a49d669d37a",
     "voice": "Eddy (English (US))",
     "top": false,
     "bio": "UI/UX designer with a visual design background. I've designed super-apps for Southeast Asian markets where low-end Android phones are the norm.",
     "skills": {
-      "design": ["UI Design", "UX Design", "Visual Design", "Illustration"],
-      "tools": ["Figma", "Illustrator", "After Effects"]
+      "design": [
+        "UI Design",
+        "UX Design",
+        "Visual Design",
+        "Illustration"
+      ],
+      "tools": [
+        "Figma",
+        "Illustrator",
+        "After Effects"
+      ]
     },
     "transcript": [
       "Hello, I'm Dimas, a UI and UX designer from Yogyakarta.",
@@ -283,12 +490,23 @@
       "I'm available to start now."
     ],
     "portfolio": [
-      { "title": "Ojek booking flow", "outcome": "Booking time down 35%", "seed": "ojek" },
-      { "title": "Warung POS", "outcome": "Used in 8,000 shops", "seed": "warung" },
-      { "title": "Illustration kit", "outcome": "60 spot illustrations", "seed": "illus" }
+      {
+        "title": "Ojek booking flow",
+        "outcome": "Booking time down 35%",
+        "seed": "ojek"
+      },
+      {
+        "title": "Warung POS",
+        "outcome": "Used in 8,000 shops",
+        "seed": "warung"
+      },
+      {
+        "title": "Illustration kit",
+        "outcome": "60 spot illustrations",
+        "seed": "illus"
+      }
     ],
-    "github": null,
-    "links": { "behance": "dimaspratama", "dribbble": "dimasp" }
+    "github": null
   },
   {
     "id": "hannah-schmidt",
@@ -303,14 +521,26 @@
     "annualRate": 130000,
     "aiMatch": 72,
     "availability": "part-time",
-    "languages": ["German", "English"],
-    "photo": "https://randomuser.me/api/portraits/women/21.jpg",
+    "languages": [
+      "German",
+      "English"
+    ],
+    "photo": "https://images.unsplash.com/photo-1553514029-1318c9127859",
     "voice": "Shelley (English (UK))",
     "top": false,
     "bio": "Product designer for mobility and climate tech. Systems thinker who enjoys pricing pages, maps and anything with a lot of edge cases.",
     "skills": {
-      "design": ["Product Design", "UX Design", "Systems Thinking", "Prototyping"],
-      "tools": ["Figma", "Framer", "Amplitude"]
+      "design": [
+        "Product Design",
+        "UX Design",
+        "Systems Thinking",
+        "Prototyping"
+      ],
+      "tools": [
+        "Figma",
+        "Framer",
+        "Amplitude"
+      ]
     },
     "transcript": [
       "Hi, I'm Hannah, a product designer in Berlin.",
@@ -319,11 +549,24 @@
       "I'm currently available part-time."
     ],
     "portfolio": [
-      { "title": "E-scooter pricing", "outcome": "Revenue per ride up 7%", "seed": "scooter" },
-      { "title": "Carbon tracker", "outcome": "Weekly actives up 20%", "seed": "carbon" }
+      {
+        "title": "E-scooter pricing",
+        "outcome": "Revenue per ride up 7%",
+        "seed": "scooter"
+      },
+      {
+        "title": "Carbon tracker",
+        "outcome": "Weekly actives up 20%",
+        "seed": "carbon"
+      }
     ],
-    "github": { "user": "hschmidt", "repos": 14, "languages": ["TypeScript", "Python"] },
-    "links": { "linkedin": "hannah-schmidt-design" }
+    "github": {
+      "repos": 14,
+      "languages": [
+        "TypeScript",
+        "Python"
+      ]
+    }
   },
   {
     "id": "marco-de-luca",
@@ -338,14 +581,26 @@
     "annualRate": null,
     "aiMatch": 69,
     "availability": "two-weeks",
-    "languages": ["Italian", "English"],
-    "photo": "https://randomuser.me/api/portraits/men/41.jpg",
+    "languages": [
+      "Italian",
+      "English"
+    ],
+    "photo": "https://images.unsplash.com/photo-1615851943632-ffb942c2fceb",
     "voice": "Rocko (English (UK))",
     "top": false,
     "bio": "UX/UI designer from a fashion and luxury retail background. Strong visual craft, with a focus on product pages and editorial commerce.",
     "skills": {
-      "design": ["UI Design", "UX Design", "Art Direction", "E-commerce"],
-      "tools": ["Figma", "Photoshop", "Shopify"]
+      "design": [
+        "UI Design",
+        "UX Design",
+        "Art Direction",
+        "E-commerce"
+      ],
+      "tools": [
+        "Figma",
+        "Photoshop",
+        "Shopify"
+      ]
     },
     "transcript": [
       "Ciao, I'm Marco, a UX and UI designer in Milan.",
@@ -354,12 +609,23 @@
       "I can start in two weeks."
     ],
     "portfolio": [
-      { "title": "Luxury PDP", "outcome": "Add-to-bag up 11%", "seed": "luxury" },
-      { "title": "Editorial lookbook", "outcome": "Session time up 2×", "seed": "lookbook" },
-      { "title": "Store locator", "outcome": "Bookings up 25%", "seed": "store" }
+      {
+        "title": "Luxury PDP",
+        "outcome": "Add-to-bag up 11%",
+        "seed": "luxury"
+      },
+      {
+        "title": "Editorial lookbook",
+        "outcome": "Session time up 2×",
+        "seed": "lookbook"
+      },
+      {
+        "title": "Store locator",
+        "outcome": "Bookings up 25%",
+        "seed": "store"
+      }
     ],
-    "github": null,
-    "links": { "behance": "marcodeluca", "linkedin": "marco-de-luca" }
+    "github": null
   },
   {
     "id": "grace-mensah",
@@ -374,14 +640,24 @@
     "annualRate": 45000,
     "aiMatch": 66,
     "availability": "now",
-    "languages": ["English", "Twi"],
-    "photo": "https://randomuser.me/api/portraits/women/30.jpg",
+    "languages": [
+      "English",
+      "Twi"
+    ],
+    "photo": "https://images.unsplash.com/photo-1530785602389-07594beb8b73",
     "voice": "Flo (English (UK))",
     "top": false,
     "bio": "Junior UX designer who moved from customer support into design. I bring a support agent's eye for where people get stuck.",
     "skills": {
-      "design": ["UX Design", "Usability Testing", "Wireframing"],
-      "tools": ["Figma", "Maze"]
+      "design": [
+        "UX Design",
+        "Usability Testing",
+        "Wireframing"
+      ],
+      "tools": [
+        "Figma",
+        "Maze"
+      ]
     },
     "transcript": [
       "Hello, I'm Grace, a junior UX designer in Accra.",
@@ -390,11 +666,18 @@
       "I'm ready to start now."
     ],
     "portfolio": [
-      { "title": "Help centre redesign", "outcome": "Self-serve rate up 15%", "seed": "help" },
-      { "title": "Bootcamp capstone", "outcome": "Top project of cohort", "seed": "capstone" }
+      {
+        "title": "Help centre redesign",
+        "outcome": "Self-serve rate up 15%",
+        "seed": "help"
+      },
+      {
+        "title": "Bootcamp capstone",
+        "outcome": "Top project of cohort",
+        "seed": "capstone"
+      }
     ],
-    "github": null,
-    "links": { "linkedin": "grace-mensah" }
+    "github": null
   },
   {
     "id": "noah-kim",
@@ -409,14 +692,26 @@
     "annualRate": 180000,
     "aiMatch": 63,
     "availability": "two-weeks",
-    "languages": ["English", "Korean"],
-    "photo": "https://randomuser.me/api/portraits/men/11.jpg",
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "photo": "https://images.unsplash.com/photo-1681097561932-36d0df02b379",
     "voice": "Eddy (English (UK))",
     "top": false,
     "bio": "Senior UX designer in enterprise HR and payroll. I simplify complex admin products without losing the power users.",
     "skills": {
-      "design": ["UX Design", "Enterprise UX", "Design Systems", "Interaction Design"],
-      "tools": ["Figma", "Pendo", "Jira"]
+      "design": [
+        "UX Design",
+        "Enterprise UX",
+        "Design Systems",
+        "Interaction Design"
+      ],
+      "tools": [
+        "Figma",
+        "Pendo",
+        "Jira"
+      ]
     },
     "transcript": [
       "Hi, I'm Noah, a senior UX designer in Toronto.",
@@ -425,11 +720,28 @@
       "I can start in two weeks."
     ],
     "portfolio": [
-      { "title": "Payroll run", "outcome": "Errors down 28%", "seed": "payroll" },
-      { "title": "Admin design system", "outcome": "Shipped to 9 products", "seed": "admin" },
-      { "title": "Time-off flow", "outcome": "Approvals 3× faster", "seed": "timeoff" }
+      {
+        "title": "Payroll run",
+        "outcome": "Errors down 28%",
+        "seed": "payroll"
+      },
+      {
+        "title": "Admin design system",
+        "outcome": "Shipped to 9 products",
+        "seed": "admin"
+      },
+      {
+        "title": "Time-off flow",
+        "outcome": "Approvals 3× faster",
+        "seed": "timeoff"
+      }
     ],
-    "github": { "user": "noahkim", "repos": 22, "languages": ["TypeScript", "Ruby"] },
-    "links": { "linkedin": "noah-kim-ux", "dribbble": "noahkim" }
+    "github": {
+      "repos": 22,
+      "languages": [
+        "TypeScript",
+        "Ruby"
+      ]
+    }
   }
 ]
